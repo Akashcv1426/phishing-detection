@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection</title>
+</head>
+<body>
+    <h2>Phishing Website Detection</h2>
+    <form method="POST">
+        <label>URL Length:</label>
+        <input type="number" name="url_length" required><br><br>
+
+        <label>HTTPS Token (1 for Yes, 0 for No):</label>
+        <input type="number" name="https_token" required><br><br>
+
+        <label>Having @ Symbol (1 for Yes, 0 for No):</label>
+        <input type="number" name="having_at_symbol" required><br><br>
+
+        <button type="submit">Check</button>
+    </form>
+
+    {% if result is not none %}
+        <h3>Prediction: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
